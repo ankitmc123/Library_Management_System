@@ -75,6 +75,20 @@ public class Library {
     
      return Availablebook;
     }
+    public List<Books> showNotAvailableBooks(){
+           List<Books>NotAvailablebook=new ArrayList<>();
+        for(Map.Entry e:bookshelf.entrySet()){
+            Books b=(Books)e.getValue();
+            if(b.getIsAvailable()==false){
+                NotAvailablebook.add(b);
+                System.out.println("name:"+b.getTitle()+" ,Isbn:"+b.getIsbn()+" ,author:"+b.getAuthor()+" ,publication_year"+b.getPublication_year());
+                
+            }
+            
+        }
+    
+     return NotAvailablebook;
+    }
     
 
 
