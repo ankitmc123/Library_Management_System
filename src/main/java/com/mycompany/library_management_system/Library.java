@@ -26,7 +26,10 @@ public class Library {
         bookshelf.put(book.getIsbn(), book);
         return book;
     }
-    public Books borrowBook(String isbn){
+    public Books borrowBook(String isbn)throws Exception{
+            if(!bookshelf.get(isbn).getIsAvailable()){
+                throw new Exception("book is already borrowed");
+            }
             Books b=bookshelf.get(isbn);
             b.setIsAvailable(false);
             return b;
