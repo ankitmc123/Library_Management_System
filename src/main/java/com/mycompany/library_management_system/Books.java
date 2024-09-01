@@ -16,7 +16,10 @@ public class Books {
     private boolean isAvailable;
 
 
-    Books (String isbn,String title,String author,int publication_year){
+    Books (String isbn,String title,String author,int publication_year) throws Exception{
+        if(!isbn.matches("^\\d+$")){
+            throw new Exception("enter valid ISBN");
+        }
         this.isbn=isbn;
         this.title=title;
         this.author=author;
