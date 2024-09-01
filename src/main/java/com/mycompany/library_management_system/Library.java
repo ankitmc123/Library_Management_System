@@ -82,12 +82,31 @@ public class Library {
             if(b.getIsAvailable()==false){
                 NotAvailablebook.add(b);
                 System.out.println("name:"+b.getTitle()+" ,Isbn:"+b.getIsbn()+" ,author:"+b.getAuthor()+" ,publication_year"+b.getPublication_year());
-                
             }
             
         }
     
      return NotAvailablebook;
+    }
+    public List<Books> showAllBooks(){
+        List<Books>allBooks=new ArrayList<>();
+        
+        for(Map.Entry e:bookshelf.entrySet()){
+            Books b=(Books)e.getValue();
+            allBooks.add(b);
+            String available="";
+            if(b.getIsAvailable()){
+                available="yes";
+            }
+            else{
+                available="no";
+            }
+                System.out.println("name:"+b.getTitle()+" ,Isbn:"+b.getIsbn()+" ,author:"+b.getAuthor()+
+                        " ,publication_year"+b.getPublication_year()+" Available:"+available);
+         
+        }
+    
+        return allBooks;
     }
     
 
