@@ -17,7 +17,7 @@ public class LibraryTest {
     }
     
     @Test
-    public void addNewBook(){
+    public void addNewBook()throws Exception{
         Library l=new Library();
         Books b1=new Books("1","book1","ankit",2021);
         assertEquals(b1,l.addBook(b1)); 
@@ -27,6 +27,9 @@ public class LibraryTest {
         Library l=new Library();
         Books b1=new Books("1","book1","ankit",2021);
         Books b2=new Books("1","book1","ankit",2021);
-        assertEquals(b1,l.addBook(b2)); 
+        assertThrows(Exception.class,()->{
+            l.addBook(b1);
+            l.addBook(b2);
+        });
     }
 }
