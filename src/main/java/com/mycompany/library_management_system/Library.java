@@ -41,5 +41,10 @@ public class Library {
 
 
     }
+    public Books returnBook(String isbn)throws Exception{
+            Books b=bookshelf.get(isbn);
+            b.setIsAvailable(true);
+            return b;
+    }
 
 }
