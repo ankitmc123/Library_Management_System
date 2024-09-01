@@ -140,4 +140,21 @@ public class LibraryTest {
 
         assertEquals(a1,l.showAvailableBooks());
     }
+    @Test
+    public void GetNotAvailableBook()throws Exception{ 
+        Library l=new Library();
+        Books b1=new Books("1","nice","prabhu",2021);
+        Books b2=new Books("2","nice2","urmik",2022);
+        Books b3=new Books("3","nice3","ankit",2023);
+        l.addBook(b1);
+        l.addBook(b2);
+        l.addBook(b3);
+        l.borrowBook(b1.getIsbn());
+        List<Books>a1=new ArrayList<>();
+
+        a1.add(b1);
+
+
+        assertEquals(a1,l.showNotAvailableBooks());
+    }
 }
