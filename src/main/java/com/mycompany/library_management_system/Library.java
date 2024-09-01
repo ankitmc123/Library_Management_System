@@ -17,12 +17,12 @@ public class Library {
         this.bookshelf=new HashMap<>();
     }
     public Books addBook(Books book)throws Exception{
-        
+        if(book==null){
+            throw new Exception("enter valid book info");
+        }
         if(bookshelf.containsKey(book.getIsbn())){
             throw new Exception("Book is already added");
-        
         }
-        
         bookshelf.put(book.getIsbn(), book);
         return book;
     }

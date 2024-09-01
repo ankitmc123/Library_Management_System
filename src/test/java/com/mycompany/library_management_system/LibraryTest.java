@@ -36,7 +36,10 @@ public class LibraryTest {
     public void addNull() throws Exception {
         Library l=new Library();
         Books b1=null;
-        assertEquals(b1,l.addBook(b1)); 
+        assertThrows(Exception.class,()->{
+            l.addBook(b1);
+            
+        });
     }
     
     
