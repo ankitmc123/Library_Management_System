@@ -6,6 +6,7 @@ package com.mycompany.library_management_system;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.*;
 
 /**
  *
@@ -121,5 +122,22 @@ public class LibraryTest {
         assertThrows(Exception.class,()->{
         l.searchavilableBook(b1.getIsbn());
         });
+    }
+    @Test
+    public void GetAvailableBook()throws Exception{ 
+        Library l=new Library();
+        Books b1=new Books("1","nice","prabhu",2021);
+        Books b2=new Books("2","nice2","urmik",2022);
+        Books b3=new Books("3","nice3","ankit",2023);
+        l.addBook(b1);
+        l.addBook(b2);
+        l.addBook(b3);
+        l.borrowBook(b1.getIsbn());
+        List<Books>a1=new ArrayList<>();
+
+        a1.add(b2);
+        a1.add(b3);
+
+        assertEquals(a1,l.showAvailableBooks());
     }
 }
