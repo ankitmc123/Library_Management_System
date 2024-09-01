@@ -72,7 +72,9 @@ public class LibraryTest {
     public void BorrowNonExistingBook()throws Exception{
         Library l=new Library();
         Books b1=new Books("1","nice","urmik",2021);
-        assertEquals(b1,l.borrowBook(b1.getIsbn()));
+        assertThrows(Exception.class,()->{
+            l.borrowBook(b1.getIsbn());        
+        });
     }
 
 

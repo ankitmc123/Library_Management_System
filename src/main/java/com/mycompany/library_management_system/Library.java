@@ -27,12 +27,17 @@ public class Library {
         return book;
     }
     public Books borrowBook(String isbn)throws Exception{
+        if(bookshelf.containsKey(isbn)){
             if(!bookshelf.get(isbn).getIsAvailable()){
                 throw new Exception("book is already borrowed");
             }
             Books b=bookshelf.get(isbn);
             b.setIsAvailable(false);
             return b;
+        }
+        else{
+            throw new Exception("non existing book");
+        }
 
 
     }
