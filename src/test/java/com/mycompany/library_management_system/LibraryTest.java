@@ -41,7 +41,13 @@ public class LibraryTest {
             
         });
     }
-    
+    @Test
+    public void addInvalidIsbn() throws Exception {
+        Library l=new Library();
+        Books b1=new Books("aaa","book1","ankit",2021);
+        assertEquals(true,b1.getIsbn().matches("^\\d+$"));
+        
+    }
     
     
 }
