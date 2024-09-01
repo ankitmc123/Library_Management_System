@@ -54,7 +54,10 @@ public class Library {
         if(b.getIsAvailable()){
             return b;
         }
-        return null;
+        else{
+            throw new Exception("book is not avilable");
+        }
+
 }
 
 
