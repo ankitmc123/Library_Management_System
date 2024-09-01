@@ -50,6 +50,13 @@ public class LibraryTest {
         });
         
     }
+    @Test
+    public void BorrowAddedBook() throws Exception {
+        Library l=new Library();
+        Books b1=new Books("1","nice","urmik",2021);
+        l.addBook(b1);
+        assertEquals(b1,l.borrowBook(b1.getIsbn()));
+    }
     
     
 }
