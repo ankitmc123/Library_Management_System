@@ -58,18 +58,25 @@ public class LibraryTest {
         assertEquals(b1,l.borrowBook(b1.getIsbn()));
     }
     @Test
-    public void BorrowAlreadyBorrowedBook()throws Exception{
+    public void BorrowalreadyboorowedBook()throws Exception{
         Library l=new Library();
         Books b1=new Books("1","nice","prabhu",2021);
             l.addBook(b1);
         assertThrows(Exception.class,()->{
-           l.borrowBook(b1.getIsbn());
-           l.borrowBook(b1.getIsbn());
-
+            l.borrowBook(b1.getIsbn());
+            l.borrowBook(b1.getIsbn());
         });
 
-        
     }
-    
-    
+    @Test
+    public void BorrowNonExistingBook()throws Exception{
+        Library l=new Library();
+        Books b1=new Books("1","nice","urmik",2021);
+        assertEquals(b1,l.borrowBook(b1.getIsbn()));
+    }
+
+
+
+
+
 }
