@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.library_management_system;
-
+import java.util.*;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -59,6 +60,22 @@ public class Library {
         }
 
 }
+ 
+    public List<Books> showAvailableBooks(){
+           List<Books>Availablebook=new ArrayList<>();
+        for(Map.Entry e:bookshelf.entrySet()){
+            Books b=(Books)e.getValue();
+            if(b.getIsAvailable()==true){
+                Availablebook.add(b);
+                System.out.println("name:"+b.getTitle()+" ,Isbn:"+b.getIsbn()+" ,author:"+b.getAuthor()+" ,publication_year"+b.getPublication_year());
+                
+            }
+            
+        }
+    
+     return Availablebook;
+    }
+    
 
 
 }
