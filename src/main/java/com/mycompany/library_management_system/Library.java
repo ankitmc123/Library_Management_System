@@ -26,5 +26,12 @@ public class Library {
         bookshelf.put(book.getIsbn(), book);
         return book;
     }
+    public Books borrowBook(String isbn){
+            Books b=bookshelf.get(isbn);
+            b.setIsAvailable(false);
+            return b;
+
+
+    }
 
 }
