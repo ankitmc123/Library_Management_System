@@ -110,6 +110,16 @@ public class LibraryTest {
         Books b1=new Books("1","nice","prabhu",2021);
         Books b2=new Books("2","nice2","urmik",2022);
         l.addBook(b1);
-        assertEquals(b1,l.searchavilableBook(b1.getIsbn())); 
+        assertEquals(b1,l.searchavilableBook(b1.getIsbn()));
+    }
+    @Test
+    public void SearchNotAvailableBook()throws Exception{ 
+        Library l=new Library();
+        Books b1=new Books("1","nice","prabhu",2021);
+        Books b2=new Books("2","nice2","urmik",2022);
+        l.addBook(b2);
+        assertThrows(Exception.class,()->{
+        l.searchavilableBook(b1.getIsbn());
+        });
     }
 }
