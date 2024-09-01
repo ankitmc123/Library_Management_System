@@ -42,7 +42,7 @@ Library_management_system
 - **Clone the Repository :** First Clone Repository .
 - **Compile project :** use command **mvn compile** .
 - **Run test cases:** use command **mvn test**.
-- **To run main method:** use command **mvc test**.
+
 
 
 ### Clone the Repository
