@@ -42,13 +42,12 @@ public class Library {
 
     }
     public Books returnBook(String isbn)throws Exception{
-
-            
+            if(bookshelf.get(isbn).getIsAvailable()){
+                throw new Exception("Book is already returned");
+            }
             Books b=bookshelf.get(isbn);
             b.setIsAvailable(true);
             return b;
-
-    
     }
 
 }
