@@ -76,6 +76,16 @@ public class LibraryTest {
             l.borrowBook(b1.getIsbn());        
         });
     }
+    @Test
+    public void ReturnBorrowedBook()throws Exception{
+        Library l=new Library();
+        Books b1=new Books("1","nice","ankit",2021);
+        l.addBook(b1);
+        l.borrowBook(b1.getIsbn());
+        assertEquals(b1,l.returnBook(b1.getIsbn()));   
+    }
+
+    
 
 
 
