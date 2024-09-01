@@ -16,5 +16,9 @@ public class Library {
     Library(){
         this.bookshelf=new HashMap<>();
     }
+        public Books addBook(Books book){
+        bookshelf.put(book.getIsbn(), book);
+        return book;
+    }
 
 }
