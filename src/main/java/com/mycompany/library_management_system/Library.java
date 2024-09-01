@@ -49,5 +49,13 @@ public class Library {
             b.setIsAvailable(true);
             return b;
     }
+    public Books searchavilableBook(String isbn)throws Exception{
+        Books b=bookshelf.get(isbn);
+        if(b.getIsAvailable()){
+            return b;
+        }
+        return null;
+}
+
 
 }
