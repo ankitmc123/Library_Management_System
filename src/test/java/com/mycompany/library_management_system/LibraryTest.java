@@ -62,8 +62,11 @@ public class LibraryTest {
         Library l=new Library();
         Books b1=new Books("1","nice","prabhu",2021);
             l.addBook(b1);
-            l.borrowBook(b1.getIsbn());
-        assertEquals(true,b1.getIsAvailable());
+        assertThrows(Exception.class,()->{
+           l.borrowBook(b1.getIsbn());
+           l.borrowBook(b1.getIsbn());
+
+        });
 
         
     }
